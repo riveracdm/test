@@ -1,0 +1,22 @@
+---
+- name: configurar nginx
+  hosts: tag_Name_MaquinaDiana 
+  become: True
+  roles:
+    - nginx 
+  tags: www
+- name: configurar mariadb
+  hosts: tag_Name_MaquinaDiana
+  become: True
+  roles:
+    - mysql 
+  tags: bbdd 
+- name: desplegar pagina de bienvenida
+  hosts: tag_Name_MaquinaDiana
+  become: True
+  tasks:
+    - name: copar página de bienvenida
+      template:
+        src: templates/index.html.j2
+        dest: /usr/share/nginx/html/index.html
+  tags: www

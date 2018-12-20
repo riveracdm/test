@@ -1,0 +1,13 @@
+---
+- name: configurar nginx
+  hosts: equipo
+  become: True
+  roles:
+    - nginx
+  tags: nginx
+- name: Rol jinja2 
+  hosts: equipo 
+  become: True
+  roles:
+    - laboratorio-jinja2 
+  tags: jinja

@@ -1,0 +1,8 @@
+---
+- name: configurar nginx
+  hosts: equipo
+  become: True
+  roles:
+    - nginx
+  tags: nginx
+

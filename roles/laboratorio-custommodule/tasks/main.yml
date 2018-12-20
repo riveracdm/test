@@ -1,0 +1,8 @@
+---
+- name: ensure nc is installed
+  yum:
+    name: nc
+    state: present
+- name: run my custom script
+  can_reach: host=www.google.es port=80 timeout=1
+  #script: scripts/can_reach.sh www.google.com 80 1

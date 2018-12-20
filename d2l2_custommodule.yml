@@ -1,0 +1,7 @@
+---
+- name: Modulo custom
+  hosts: equipo
+  become: True
+  roles:
+    - laboratorio-custommodule
+  tags: custommodule
