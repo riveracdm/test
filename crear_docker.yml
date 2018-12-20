@@ -1,0 +1,14 @@
+---
+- name: crear docker 
+  hosts: localhost
+  tasks:
+    - name: crear contenedor
+      docker_container:
+        name: mydocker
+        image: redis
+        state: started
+        restart: yes
+        ports:
+         - "6379:6379"     
+        volumes:
+         - /data:/data
